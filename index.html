@@ -66,6 +66,7 @@
       .container {
         max-width: var(--max-width);
         margin: 0 auto;
+        padding: 0 clamp(1rem, 4vw, 2.5rem);
         position: relative;
         z-index: 1;
       }
@@ -102,7 +103,7 @@
 
       .hero {
         display: grid;
-        gap: 2rem;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
         align-items: center;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
@@ -181,7 +182,7 @@
       }
 
       main section {
-        padding: 4.5rem 0;
+        padding: clamp(3rem, 6vw, 4.5rem) 0;
       }
 
       .section-heading {
@@ -390,6 +391,8 @@
         display: inline-flex;
         flex-direction: column;
         gap: 0.75rem;
+        width: min(380px, 100%);
+        margin: 0 auto;
       }
 
       .waitlist input {
@@ -438,16 +441,50 @@
 
         .hero-quote {
           text-align: left;
+          margin-inline: auto;
+        }
+
+        .hero-image .orb {
+          width: min(320px, 75vw);
+        }
+
+        .card {
+          padding: 1.75rem;
         }
 
         .modules li {
-          padding: 1.5rem;
+          padding: 1.75rem;
         }
 
         .modules li::before {
           position: static;
           display: inline-block;
           margin-bottom: 0.5rem;
+        }
+
+        .waitlist input,
+        .waitlist button {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 540px) {
+        nav .cta {
+          width: 100%;
+          text-align: center;
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(2.2rem, 8vw, 2.8rem);
+        }
+
+        footer {
+          text-align: center;
+        }
+
+        footer .cta {
+          width: 100%;
+          justify-content: center;
         }
       }
     </style>
